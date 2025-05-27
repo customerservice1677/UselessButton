@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="monetag" content="0695d7ca3c3686d8437253694594d78c">
+  <script src="https://fpyf8.com/88/tag.min.js" data-zone="149391" async data-cfasync="false"></script>
+  <title>The Useless Button</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #1e1e1e, #121212);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    #useless-button {
+      background: linear-gradient(135deg, #006ec4, #01010101);
+      border: double;
+      border-width: 10px;
+      border-radius: 20px;
+      border-color: black;
+      width: 200px;
+      height: 100px;
+      font-size: 1.2rem;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #useless-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    #response {
+      margin-top: 40px;
+      font-size: 1.5rem;
+      max-width: 600px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.4s ease-in-out;
+    }
+
+    #response.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <h1>Press the Useless Button</h1>
+  <button id="useless-button">Do Not Press</button>
+  <div id="response"></div>
+
+  <script>
+    const messages = [
+      "Congratulations. You've done... absolutely nothing!",
+      "This button has no purpose. Much like your last relationship.",
+      "You clicked it. Now what?",
+      "Achievement Unlocked: Wasted Click",
+      "Button clicked. Planet exploded. Good job.",
+      "Each click feeds a squirrel somewhere. Keep going.",
+      "This button knows your secrets. Just kidding... or am I?",
+      "NASA just got notified. They're confused.",
+      "You clicked. Somewhere, a toaster popped.",
+      "You're officially a member of the Useless Society. Welcome!",
+      "You pressed it again? Madness.",
+      "Clicking this button increases your coolness by 0.0001%. Keep grinding.",
+      "Error 404: Purpose Not Found",
+      "A unicorn just sneezed in another dimension.",
+      "That click caused someone to yawn. Spooky."
+    ];
+
+    const button = document.getElementById('useless-button');
+    const response = document.getElementById('response');
+
+    button.addEventListener('click', () => {
+      const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+      response.textContent = randomMessage;
+      response.classList.remove('show');
+      setTimeout(() => response.classList.add('show'), 100);
+    });
+  </script>
+</body>
+</html>
